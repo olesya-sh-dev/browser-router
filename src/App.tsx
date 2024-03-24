@@ -3,10 +3,12 @@ import styles from "./components/Site.module.css";
 import { PageOne } from "./components/pages/PageOne";
 import { PageTwo } from "./components/pages/PageTwo";
 import { PageThree } from "./components/pages/PageThree";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Error404 } from "./components/pages/Error404";
 import { NavLink } from "react-router-dom";
-import { error } from "console";
+
+import styled from "styled-components";
+import { s } from "./components/pages/_styles";
 
 function App() {
   return (
@@ -16,36 +18,15 @@ function App() {
       </div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <div>
-            <NavLink
-              to={"/page1"}
-              className={({ isActive }) =>
-                isActive ? styles.activeNavLink : ""
-              }
-            >
-              Page1
-            </NavLink>
-          </div>
-          <div>
-            <NavLink
-              to={"/page2"}
-              className={({ isActive }) =>
-                isActive ? styles.activeNavLink : ""
-              }
-            >
-              Page2
-            </NavLink>
-          </div>
-          <div>
-            <NavLink
-              to={"/page3"}
-              className={({ isActive }) =>
-                isActive ? styles.activeNavLink : ""
-              }
-            >
-              Page3
-            </NavLink>
-          </div>
+          <s.NavWrapper>
+            <NavLink to={"/page1"}>Page1</NavLink>
+          </s.NavWrapper>
+          <s.NavWrapper>
+            <NavLink to={"/page2"}>Page2</NavLink>
+          </s.NavWrapper>
+          <s.NavWrapper>
+            <NavLink to={"/page3"}>Page3</NavLink>
+          </s.NavWrapper>
           {/* <div>
             <a href="/page3">page3 HTML</a>
           </div> */}
