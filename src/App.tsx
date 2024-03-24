@@ -14,7 +14,7 @@ const PATH = {
   PAGE1: "/page1",
   PAGE2: "/page2",
   PAGE3: "/page3",
-  ERROR404: "/error404",
+  ERROR404: "/*",
 } as const;
 function App() {
   return (
@@ -43,9 +43,10 @@ function App() {
             <Route path={PATH.PAGE1} element={<PageOne />} />
             <Route path={PATH.PAGE2} element={<PageTwo />} />
             <Route path={PATH.PAGE3} element={<PageThree />} />
-
             <Route path={PATH.ERROR404} element={<Error404 />} />
-            <Route path="/*" element={<Navigate to={"/error404"} />} />
+
+            {/* <Route path={"/page/error"} element={<Error404 />} />
+            <Route path="/*" element={<Navigate to={"/page/error"} />} /> */}
           </Routes>
         </div>
       </div>
