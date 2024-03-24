@@ -8,8 +8,14 @@ import { Error404 } from "./components/pages/Error404";
 import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
-import { s } from "./components/pages/_styles";
+import { S } from "./components/pages/_styles";
 
+const PATH = {
+  PAGE1: "/page1",
+  PAGE2: "/page2",
+  PAGE3: "/page3",
+  ERROR404: "/error404",
+} as const;
 function App() {
   return (
     <div>
@@ -18,15 +24,15 @@ function App() {
       </div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <s.NavWrapper>
-            <NavLink to={"/page1"}>Page1</NavLink>
-          </s.NavWrapper>
-          <s.NavWrapper>
-            <NavLink to={"/page2"}>Page2</NavLink>
-          </s.NavWrapper>
-          <s.NavWrapper>
-            <NavLink to={"/page3"}>Page3</NavLink>
-          </s.NavWrapper>
+          <S.NavWrapper>
+            <NavLink to={PATH.PAGE1}>Page1</NavLink>
+          </S.NavWrapper>
+          <S.NavWrapper>
+            <NavLink to={PATH.PAGE2}>Page2</NavLink>
+          </S.NavWrapper>
+          <S.NavWrapper>
+            <NavLink to={PATH.PAGE3}>Page3</NavLink>
+          </S.NavWrapper>
           {/* <div>
             <a href="/page3">page3 HTML</a>
           </div> */}
@@ -34,10 +40,11 @@ function App() {
         <div className={styles.content}>
           <Routes>
             <Route path="/" element={<Navigate to={"/page1"} />} />
-            <Route path="/page1" element={<PageOne />} />
-            <Route path="/page2" element={<PageTwo />} />
-            <Route path="/page3" element={<PageThree />} />
-            <Route path="/error404" element={<Error404 />} />
+            <Route path={PATH.PAGE1} element={<PageOne />} />
+            <Route path={PATH.PAGE2} element={<PageTwo />} />
+            <Route path={PATH.PAGE3} element={<PageThree />} />
+
+            <Route path={PATH.ERROR404} element={<Error404 />} />
             <Route path="/*" element={<Navigate to={"/error404"} />} />
           </Routes>
         </div>
