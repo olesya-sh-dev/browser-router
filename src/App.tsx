@@ -44,7 +44,8 @@ function App() {
             <Route path={PATH.ADIDAS} element={<Adidas />} />
             <Route path={PATH.PUMA} element={<Puma />} />
             <Route path={PATH.ABIBAS} element={<Abibas />} />
-            <Route path={`/adidas/model/:id`} element={<Model />} />
+            <Route path={`/adidas/:id`} element={<Model />} />
+
             <Route path={PATH.ERROR404} element={<Error404 />} />
 
             {/* <Route path={"/page/error"} element={<Error404 />} />
