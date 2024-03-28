@@ -9,7 +9,8 @@ import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 import { S } from "./components/pages/_styles";
-import { Model } from "./components/pages/Model";
+import { AdidasModel } from "./components/pages/AdidasModel";
+import { PumaModel } from "./components/pages/PumaModel";
 
 const PATH = {
   ADIDAS: "/adidas",
@@ -40,12 +41,12 @@ function App() {
         </div>
         <div className={styles.content}>
           <Routes>
-            <Route path="/" element={<Navigate to={"/page1"} />} />
+            <Route path="/" element={<Navigate to={PATH.ADIDAS} />} />
             <Route path={PATH.ADIDAS} element={<Adidas />} />
             <Route path={PATH.PUMA} element={<Puma />} />
             <Route path={PATH.ABIBAS} element={<Abibas />} />
-            <Route path={`/adidas/:id`} element={<Model />} />
-
+            <Route path={`/adidas/:id`} element={<AdidasModel />} />
+            <Route path={`/puma/:id`} element={<PumaModel />} />
             <Route path={PATH.ERROR404} element={<Error404 />} />
 
             {/* <Route path={"/page/error"} element={<Error404 />} />

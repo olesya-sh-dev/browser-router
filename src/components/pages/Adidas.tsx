@@ -3,7 +3,7 @@ import adidasModel1 from "../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standar
 import adidasModel2 from "../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp";
 import adidasModel3 from "../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp";
 import { Navigate, Routes } from "react-router-dom";
-import { Model } from "./Model";
+import { AdidasModel } from "./AdidasModel";
 import { Link } from "react-router-dom";
 
 export type AdidasItem = {
@@ -39,7 +39,7 @@ export const adidasArr: AdidasItem[] = [
 export const Adidas = () => {
   return (
     <>
-      <h2> ADIDAS</h2>
+      <h2 style={{ textAlign: "center" }}> ADIDAS</h2>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {adidasArr.map((adidas) => (
           <Link key={adidas.id} to={`/adidas/${adidas.id}`}>

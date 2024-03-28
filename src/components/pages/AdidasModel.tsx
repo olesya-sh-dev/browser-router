@@ -3,7 +3,7 @@ import { adidasArr } from "./Adidas";
 import { useParams } from "react-router-dom";
 import { Error404 } from "./Error404";
 
-export const Model = () => {
+export const AdidasModel = () => {
   const params = useParams();
   const currentModel = adidasArr.find((el) => el.id === Number(params.id));
 
