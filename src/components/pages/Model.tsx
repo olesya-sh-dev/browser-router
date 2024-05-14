@@ -1,12 +1,35 @@
 import React from "react";
-import { adidasArr } from "./Adidas";
+import { AdidasItem, adidasArr } from "./Adidas";
 import { useParams } from "react-router-dom";
 import { Error404 } from "./Error404";
+import { PumaItem, pumaArr } from "./Puma";
 
-export const AdidasModel = () => {
-  const params = useParams();
-  const currentModel = adidasArr.find((el) => el.id === Number(params.id));
+type CrossModels = {
+  [key: string]: AdidasItem[] | PumaItem[];
+};
 
+const crossModels: CrossModels = {
+  adidas: adidasArr,
+  puma: pumaArr,
+};
+
+export const Model = () => {
+  // const params = useParams();
+  const { model, id } = useParams();
+
+  console.log(model);
+  //TODO
+
+  //const currentModel = adidasArr.find((el) => el.id === Number(id));
+  // const currentModel = model
+  //   ? crossModels[model].find((el) => el.id === Number(id))
+  //   : null;
+
+  const currentModel = crossModels[`${model}`].find(
+    (el) => el.id === Number(id)
+  );
+
+  console.log(currentModel);
   return (
     <div style={{ textAlign: "center" }}>
       {currentModel ? (

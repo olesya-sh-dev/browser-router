@@ -1,10 +1,9 @@
-import React from "react";
 import pumaModel1 from "../../assets/krossovki-puma-19.webp";
 import pumaModel2 from "../../assets/krossovki-puma-20.webp";
 import pumaModel3 from "../../assets/krossovki-puma-21.webp";
 import { Link } from "react-router-dom";
 
-type PumaItem = {
+export type PumaItem = {
   id: number;
   model: string;
   collection: string;
